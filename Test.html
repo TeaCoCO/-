@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width= c;device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 1px;
+        height: 100vh;
+        background-color: #eee;
+      }
+      /** {
+        border: 1px solid black;
+      }*/
+
+      .flex {
+        display: flex;
+      }
+      .白色 {
+        background: white;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .colum {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .数据 {
+        height: 200px;
+      }
+      .列表 {
+        height: 150px;
+      }
+      .头像 {
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #999;
+      }
+      .名称 {
+        margin-left: 20px;
+      }
+      .导航 {
+        padding: 10px 20px;
+        border-bottom: 1px solid grey;
+        font-size: 15px;
+        color: cornflowerblue;
+      }
+      .提示 {
+        height: 150px;
+        padding: 10px solid grey;
+      }
+      .消息 {
+        height: 300px;
+      }
+      /*当屏幕像素小于600改变css*/
+      @media (max-width: 600px) {
+        .侧边栏 {
+          display: none;
+        }
+        .内容区域 {
+          flex-direction: column;
+        }
+        .数据区域 {
+          flex-direction: column;
+        }
+        .右区 {
+          margin-left: 8px;
+        }
+        .数据 {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!--侧边栏-->
+    <div style="width: 200px; z-index: 2" class="白色 侧边栏">
+      <!--头像-->
+      <div class="flex 头像">
+        <div style="height: 40px; width: 40px; color: aquamarine"></div>
+        <div class="名称">导航栏</div>
+      </div>
+      <!--导航-->
+      <div class="导航">导航</div>
+      <div class="导航">导航</div>
+      <div class="导航">导航</div>
+      <div class="导航">导航</div>
+      <div class="导航">导航</div>
+      <div class="导航">导航</div>
+    </div>
+
+    <!--主区域-->
+    <div class="flex1 flex colum">
+      <!--头部-->
+      <div style="height: 60px; z-index: 1" class="白色"></div>
+      <!--内容-->
+      <div style="overflow: auto" class="flex1 flex 内容区域">
+        <!--左区-->
+        <div style="flex: 3" class="flex colum mg8">
+          <!--数据区-->
+          <div class="flex 数据区域">
+            <div class="flex1 白色 mgr8 数据">1</div>
+            <div class="flex1 白色 mgr8 数据">2</div>
+            <div class="flex1 白色 mgr8 数据">3</div>
+            <div class="flex1 白色 数据">4</div>
+          </div>
+          <!--列表-->
+          <div class="flex colum"></div>
+          <!--列表项-->
+          <div class="白色 mgt8 列表">1</div>
+          <div class="白色 mgt8 列表">2</div>
+          <div class="白色 mgt8 列表">3</div>
+          <div class="白色 mgt8 列表">4</div>
+        </div>
+        <!--右区-->
+        <div style="flex: 1" class="flex colum mgt8 右区">
+          <!--提示区域-->
+          <div class="白色 提示">提示区</div>
+          <!--消息区域-->
+          <div class="白色 mgt8 消息">消息区</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
